@@ -1,6 +1,6 @@
 # Vite Boilerplate with Tailwind CSS, TypeScript, ESLint and Prettier
 
-This is a boilerplate project for building web applications with [Vite](https://vitejs.dev/) and [React](https://reactjs.org/) using [TypeScript](https://www.typescriptlang.org/), [Tailwind CSS](https://tailwindcss.com/), [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/).
+This is a boilerplate project for building web applications with [Vite](https://vitejs.dev/) and [React](https://reactjs.org/) using [TypeScript](https://www.typescriptlang.org/), [Tailwind CSS](https://tailwindcss.com/), [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/), and[Jest](https://jestjs.io/).
 
 ## Getting Started
 
@@ -30,6 +30,10 @@ npm run type-check
 
 npm run lint
 
+### To run tests:
+
+npm run test
+
 ## Features
 
 - Ready-to-use configuration for Vite, React, TypeScript, Tailwind CSS, ESLint and Prettier
@@ -38,6 +42,7 @@ npm run lint
 - Optimized production build with automatic chunk splitting
 - Configured with sensible ESLint and Prettier defaults for consistent code style
 - Automatic formatting with Prettier on save
+- Test framework with Jest for writing and running tests
 
 ## License
 
