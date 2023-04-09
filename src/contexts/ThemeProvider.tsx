@@ -3,29 +3,28 @@ import { ThemeContext, ThemeContextType, ThemeMode } from './ThemeContext'
 
 const themeConfig = {
   light: {
-    backgroundPrimary: '#FFFFFF',
-    backgroundSecondary: '#F3F4F6',
-    textPrimary: '#1F2937',
-    textSecondary: '#6B7280',
-    textSubtitle: '#4B5563',
-    accent: '#10B981',
-    error: '#EF4444',
-    warning: '#F59E0B',
-    success: '#22C55E',
+    backgroundPrimary: 'bg-white',
+    backgroundSecondary: 'bg-gray-200',
+    textPrimary: 'text-gray-900',
+    textSecondary: 'text-gray-600',
+    textSubtitle: 'text-gray-700',
+    accent: 'text-green-500',
+    error: 'text-red-500',
+    warning: 'text-yellow-500',
+    success: 'text-green-500',
   },
   dark: {
-    backgroundPrimary: '#1F2937',
-    backgroundSecondary: '#4B5563',
-    textPrimary: '#FFFFFF',
-    textSecondary: '#D1D5DB',
-    textSubtitle: '#D1D5DB',
-    accent: '#34D399',
-    error: '#F87171',
-    warning: '#FBBF24',
-    success: '#4ADE80',
+    backgroundPrimary: 'bg-gray-900',
+    backgroundSecondary: 'bg-gray-700',
+    textPrimary: 'text-white',
+    textSecondary: 'text-gray-300',
+    textSubtitle: 'text-gray-300',
+    accent: 'text-green-500',
+    error: 'text-red-500',
+    warning: 'text-yellow-500',
+    success: 'text-green-500',
   },
 }
-
 interface ThemeProviderProps {
   children: React.ReactNode
 }
@@ -37,9 +36,13 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
     setMode((prevMode) => (prevMode === 'light' ? 'dark' : 'light'))
   }
 
+  const themeValue: ThemeContextType = {
+    ...themeConfig[mode],
+    mode,
+    toggleMode,
+  }
+
   return (
-    <ThemeContext.Provider value={{ ...themeConfig[mode], mode, toggleMode }}>
-      {children}
-    </ThemeContext.Provider>
+    <ThemeContext.Provider value={themeValue}>{children}</ThemeContext.Provider>
   )
 }
